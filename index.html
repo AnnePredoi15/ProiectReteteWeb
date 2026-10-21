@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucătăria Roșie - Platformă Culinară</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="toast" class="toast">Mesaj de alertă</div>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">🍲</span>
+            <span class="logo-text">Bucătăria Roșie</span>
+        </div>
+        <div class="nav-links">
+            <button class="nav-btn active" id="home-tab">🏠 Acasă</button>
+            <button class="nav-btn" id="favorites-tab">❤️ Favorite (<span id="fav-count">0</span>)</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="main-header">
+            <h1>Descoperă rețete delicioase</h1>
+            <p>Găsește inspirație rapidă pentru fiecare masă din zi</p>
+        </header>
+
+        <main id="main-content">
+            <form id="search-form">
+                <div class="input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="search-input" placeholder="Caută rețetă sau ingredient (ex: chicken, pasta, pie)..." required>
+                </div>
+                <button type="submit" class="search-submit-btn">Caută</button>
+            </form>
+
+            <div class="suggestions">
+                <p>Categorii populare și opțiuni:</p>
+                <div class="suggestion-buttons">
+                    <button type="button" class="tag-btn" data-query="breakfast">🍳 Mic Dejun</button>
+                    <button type="button" class="tag-btn" data-query="chicken">🍗 Pui</button>
+                    <button type="button" class="tag-btn" data-query="pasta">🍝 Paste</button>
+                    <button type="button" class="tag-btn" data-query="pie">🥧 Plăcintă</button>
+                    <button type="button" class="tag-btn random-btn" id="random-recipe-btn">🎲 Rețetă Aleatorie</button>
+                </div>
+            </div>
+
+            <div id="stats-banner" class="stats-banner" style="display: none;">
+                <p>Rezultate găsite: <span id="results-counter">0</span> rețete</p>
+            </div>
+
+            <div id="results-container" class="recipes-grid"></div>
+        </main>
+    </div>
+
+    <div id="recipe-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
